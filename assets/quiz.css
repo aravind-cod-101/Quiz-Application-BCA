@@ -1,13 +1,16 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: azure;
 }
 
 #quiz-container {
-  max-width: 550px;
+  max-width: 850px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  border-color: blueviolet;
+  margin-top: 20px;
 }
 
 h2 {
