@@ -83,8 +83,8 @@ footer{
 }
 
 #footer{
-  margin-bottom: 80;
-  height: 40px;
+  margin-bottom: 10;
+  /* height: 10px; */
 }
 
 .linkedin{
@@ -95,12 +95,14 @@ footer{
   height: 20px;
 }
 
-.container.text-center{
-  margin: 0 auto;
-
+div.container.text-center{
+  background-color: chartreuse;
+  height: 25px;
+  
 }
 
-.navbar.navbar-expand-lg.navbar-light.bg-light{
-  background-color: rgb(14, 17, 170);
-
+section#footer.py-5{
+padding: 25px 5px;
+margin-top: 0%;
+height: fit-content;
 }
