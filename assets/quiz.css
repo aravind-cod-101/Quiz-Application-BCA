@@ -11,6 +11,7 @@ body {
   border-radius: 5px;
   border-color: blueviolet;
   margin-top: 20px;
+  background-color: burlywood;
 }
 
 h2 {
@@ -53,4 +54,18 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+}
+/* 
+.navbar{
+  background-color: #008CBA;
+  display:flex;
+  justify-content: space-between;
+} */
+
+.navbar a:hover{
+  background-color: #008CBA;
+}
+
+.navbar{
+  background-color: coral;
 }
