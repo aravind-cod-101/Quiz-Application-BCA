@@ -106,3 +106,14 @@ padding: 25px 5px;
 margin-top: 0%;
 height: fit-content;
 }
+
+/* Start quiz button */
+#start-quiz-button{
+float: right;
+background-color: green;
+}
+
+#timer{
+  text-align: center;
+  margin-bottom: 15%;
+}

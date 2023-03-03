@@ -8,6 +8,7 @@ let currentQuestion = 0;
 // Restart button
 const restartButton = document.getElementById('restart-button');
 console.log(restartButton);
+restartButton.style.backgroundColor = 'green';
 
 // Adding an event listener to restartButton
 restartButton.addEventListener('click', function() {
@@ -17,6 +18,37 @@ restartButton.addEventListener('click', function() {
 // Display the first question again
 displayQuestion(questions[currentQuestion]);
 });
+
+// Timer functionality
+// const timer = document.getElementById('timer');
+console.log(timer);
+const timeRemainingSpan = document.getElementById('time-remaining');
+const startQuizButton = document.getElementById('start=quiz-buttonn');
+// Setting the initial time remaining for the quiz
+let timeRemaining = 60;
+
+//Creating a function to start timer
+function startTimer(){
+  const timer = setInterval(() => {
+    timeRemaining --;
+    timeRemainingSpan.textContent = timeRemaining;
+
+    if(timeRemaining <=0) {
+      clearInterval(timer);
+      timeRemainingSpan.textContent = "Quiz Over";
+  
+    }
+  }, 10000);
+  
+} 
+
+startQuizButton.addEventListener('click', () => {
+  console.log('button clicked');
+  startTimer();
+});
+
+
+  
 
 // Display the current question and answer choices
 function displayQuestion() {
