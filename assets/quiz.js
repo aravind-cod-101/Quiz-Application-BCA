@@ -5,6 +5,19 @@ const questions = [  {    question: "What is the capital of France?",    answers
 let score = 0;
 let currentQuestion = 0;
 
+// Restart button
+const restartButton = document.getElementById('restart-button');
+console.log(restartButton);
+
+// Adding an event listener to restartButton
+restartButton.addEventListener('click', function() {
+  //Reset the quiz to its initial state
+  currentQuestion = 0; //This sets current question back to its initial state
+  score = 0; //This sets the score back to its initial state
+// Display the first question again
+displayQuestion(questions[currentQuestion]);
+});
+
 // Display the current question and answer choices
 function displayQuestion() {
   const question = questions[currentQuestion];
@@ -58,6 +71,7 @@ function displayScore() {
     <p>You got ${score} out of ${questions.length} questions correct.</p>
   `;
 }
+
 
 // Start the quiz
 displayQuestion();
