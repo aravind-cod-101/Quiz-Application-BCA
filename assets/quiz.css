@@ -16,7 +16,9 @@ body {
 }
 
 /* timer */
-
+#timer{
+  visibility: hidden;
+}
 
 h2 {
   margin-top: 0;
@@ -93,6 +95,20 @@ footer{
 
 .linkedin{
   background-color: gold;
+  
+}
+.facebook{
+  background-color: gold;
+}
+.skype{
+  background-color: gold;
+}
+.twitter{
+  background-color: gold;
+
+}
+.flickr{
+  background-color: gold;
 }
 
 .footer{
@@ -100,15 +116,13 @@ footer{
 }
 
 div.container.text-center{
-  background-color: chartreuse;
-  height: 25px;
+  height: 20px;
   
 }
 
 section#footer.py-5{
-padding: 25px 5px;
-margin-top: 0%;
-height: fit-content;
+height: 20;
+
 }
 
 /* Start quiz button */
@@ -120,9 +134,16 @@ background-color: green;
 #timer{
   text-align: center;
   margin-bottom: 15%;
+  font-size: larger;
+  color: blue;
 }
 
 #welcome-message{
   text-align: center;
   color: blueviolet;
+}
+
+h6.m-0.mt-4.text-center.text-white.text-capitalize{
+  background-color: black;
+  height: 40px;
 }
