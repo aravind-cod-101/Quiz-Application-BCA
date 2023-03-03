@@ -1,5 +1,12 @@
 // Define the questions and answers
-const questions = [  {    question: "What is the capital of France?",    answers: {      a: "Paris",      b: "Madrid",      c: "Rome",    },    correctAnswer: "a",  },  {    question: "What is the largest planet in our solar system?",    answers: {      a: "Jupiter",      b: "Saturn",      c: "Neptune",    },    correctAnswer: "a",  },  {    question: "What is the smallest country in the world?",    answers: {      a: "Monaco",      b: "Vatican City",      c: "San Marino",    },    correctAnswer: "b",  },];
+const questions = [  {    question: "What is the capital of France?",    answers: {      a: "Paris",      b: "Madrid",      c: "Rome",    },    correctAnswer: "a",  },  
+{    question: "What is the largest planet in our solar system?",    answers: {      a: "Jupiter",      b: "Saturn",      c: "Neptune",    },    correctAnswer: "a",  },  
+{    question: "What is the smallest country in the world?",    answers: {      a: "Monaco",      b: "Vatican City",      c: "San Marino",    },    correctAnswer: "b",  },
+{    question: "Where is MMDU located in India?", answers: { a: "Chandigah", b: "Delhi", c: "Mullana", }, correctAnswer: "c",   },
+{    question: "What is the full meaning of BCA as a course in MMDU?", answers: {a: "Bachelor of Computer Applications", b: "Bachelor of Cardiac Arrest", c: "Bachelor of Computer Science"}, correctAnswer: "a", },
+{    question: "Who is the head of the BCA department?", answers: { a: "Vivek Bhatnagar", b: "Gautam Kumar", c: "Dr Rattan", }, correctAnswer: "a", },
+
+];
 
 // Define variables for the quiz
 let score = 0;
