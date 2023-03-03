@@ -22,8 +22,8 @@ displayQuestion(questions[currentQuestion]);
 // Timer functionality
 // const timer = document.getElementById('timer');
 console.log(timer);
-const timeRemainingSpan = document.getElementById('time-remaining');
-const startQuizButton = document.getElementById('start=quiz-buttonn');
+const timeRemainingSpan = document.getElementById("time-remaining");
+const startQuizButton = document.getElementById("start-quiz-button");
 // Setting the initial time remaining for the quiz
 let timeRemaining = 60;
 
@@ -51,6 +51,12 @@ startQuizButton.addEventListener('click', () => {
   
 
 // Display the current question and answer choices
+const quizContainer = document.getElementById("quiz-container")
+startQuizButton.addEventListener("click", function(){
+  // show the quiz container and timer
+  quizContainer.style.visibility = "visible";
+  timer.style.visibility = "visible";
+})
 function displayQuestion() {
   const question = questions[currentQuestion];
   const quizContainer = document.getElementById("quiz-container");

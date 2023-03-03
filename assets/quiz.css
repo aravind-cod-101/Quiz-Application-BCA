@@ -12,7 +12,11 @@ body {
   border-color: blueviolet;
   margin-top: 20px;
   background-color: burlywood;
+  visibility: hidden;
 }
+
+/* timer */
+
 
 h2 {
   margin-top: 0;
