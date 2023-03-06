@@ -149,6 +149,6 @@ h6.m-0.mt-4.text-center.text-white.text-capitalize{
 }
 
 /* Adding media queries to make it mobile responsive */
-@media only screen and (max-width:720px) {
+@media only screen and (max-width:93.75%) {
   /* CSS styles for small screens */
 }
