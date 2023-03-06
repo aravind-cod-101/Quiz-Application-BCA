@@ -147,3 +147,8 @@ h6.m-0.mt-4.text-center.text-white.text-capitalize{
   background-color: black;
   height: 40px;
 }
+
+/* Adding media queries to make it mobile responsive */
+@media only screen and (max-width:600px){
+  /* CSS styles for small screens */
+}
