@@ -23,6 +23,9 @@
 ## Contributions:
 This project is welcome for any contributions to improve the application.
 
+## Screenshots:
+* ![image](assets/screenshots/Sample_page.jpg)
+
 
 ## Deployed link
 * https://damiennsoh.github.io/Quiz-Application-BCA/
