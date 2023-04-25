@@ -1,166 +1,441 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz-Application</title>
-    <!-- Vanila CSS Link -->
-    <link rel="stylesheet" href="./assets/quiz.css">
-    <!-- Bootstrap CSS link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- css for footer -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
- 
+<html lang="en" data-theme="light">
+
 <head>
-   <!-- javascript plugins for footer -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    html {
+        --system_font: system-ui, -apple-system;
+        font-size: 62.5%;
+        height: 100%;
+        font-family: var(--system_font);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: inherit;
+    }
+
+    img {
+        object-fit: cover;
+    }
+
+    img,
+    canvas {
+        display: block;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        background: var(--primary);
+        font-size: 1.6rem;
+    }
+
+    body>main {
+        flex-grow: 1;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    h1 {
+        font-weight: 500;
+        font-size: max(32px, calc(1.9em + 0.6vw));
+    }
+
+    h2 {
+        font-weight: 500;
+        font-size: max(26px, calc(1.6em + 0.4vw));
+    }
+
+    h3 {
+        font-weight: 500;
+        font-size: max(22px, calc(1.3em + 0.3vw));
+    }
+
+    h4 {
+        font-weight: 500;
+        font-size: max(18px, calc(1.1em + 0.2vw));
+    }
+
+    h5 {
+        font-weight: 500;
+        font-size: 1em;
+    }
+
+    h6 {
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .rflex {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .rflexw {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .rflexr {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .rflexrw {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .cflex {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cflexw {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cflexr {
+        flex-direction: column-reverse;
+    }
+
+    .cflexrw {
+        flex-direction: column-reverse;
+    }
+
+    .jcs {
+        justify-content: start;
+    }
+
+    .jce {
+        justify-content: end;
+    }
+
+    .jcc {
+        justify-content: center;
+    }
+
+    .jcsb {
+        justify-content: space-between;
+    }
+
+    .jcsa {
+        justify-content: space-around;
+    }
+
+    .jcse {
+        justify-content: space-evenly;
+    }
+
+    .ais {
+        align-items: start;
+    }
+
+    .aie {
+        align-items: end;
+    }
+
+    .aic {
+        align-items: center;
+    }
+
+    .ass {
+        align-self: start;
+    }
+
+    .ase {
+        align-self: end;
+    }
+
+    .asc {
+        align-self: center;
+    }
+
+    .asst {
+        align-self: stretch;
+    }
+
+    .pos-abs {
+        position: absolute;
+    }
+
+    .pos-rel {
+        position: relative;
+    }
+
+    .pos-fix {
+        position: fixed;
+    }
+
+    .pos-sti {
+        position: sticky;
+    }
+
+    .btn {
+        position: relative;
+        font-size: 1.6rem;
+        line-height: 1.3;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 6px 24px;
+        border: 3px solid transparent;
+        background: none;
+        user-select: none;
+        outline: none;
+    }
+
+    :root {
+        --primary: rgba(233, 236, 239, 1);
+        --secondary: rgba(248, 249, 250, 1);
+        --prime_text: rgba(33, 37, 41, 1);
+        --sec_text: rgba(73, 80, 87, 1);
+        --panel_shadow: rgba(222, 226, 230, 1);
+    }
+
+    :root[data-theme="dark"] {
+        --primary: rgba(33, 37, 41, 1);
+        --secondary: rgba(52, 58, 64, 1);
+        --prime_text: #dee2e6;
+        --sec_text: #616a74;
+        --panel_shadow: rgba(33, 37, 41, 1);
+    }
+
+    body {
+        align-items: center;
+        justify-content: center;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: min(350px, 100%);
+        box-shadow: 0 0 20px 0 var(--panel_shadow);
+        padding: 20px;
+        background: var(--secondary);
+        color: var(--prime_text);
+    }
+
+    main .header .brand {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    main .footer .btn_group {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+        padding-inline: 20px;
+    }
+
+    main .footer .btn_group .btn {
+        flex-grow: 1;
+        color: var(--prime_text);
+        border-radius: 10px;
+        border: 2px solid var(--sec_text);
+        transition: all 0.4s;
+    }
+
+    main .footer .btn_group .btn.full {
+        color: var(--secondary);
+        background: var(--sec_text);
+    }
+
+    main .footer .btn_group .btn.full:hover {
+        color: var(--primary);
+        background: var(--prime_text);
+    }
+
+    main .footer .btn_group .btn:not(:first-child) {
+        margin-left: 6px;
+    }
+
+    main .footer .btn_group .btn:hover {
+        color: var(--secondary);
+        background: var(--sec_text);
+    }
+
+    main .footer h6 {
+        text-align: center;
+    }
+
+    main .footer h6 .brand {
+        font-size: 1.8rem;
+    }
+
+    main .container {
+        flex-grow: 1;
+        padding: 40px 20px;
+    }
+
+    main .container #intro {
+        font-size: 3rem;
+        text-align: center;
+        margin-block: auto;
+    }
+
+    main .container #intro.hide {
+        display: none;
+    }
+
+    main .container #question {
+        padding-block: 30px;
+    }
+
+    main .container #answers .answer {
+        font-weight: 600;
+        padding: 10px 20px;
+        background: var(--primary);
+        margin-block: 8px;
+        border-radius: 7px;
+        transition: all 0.4s;
+        outline: 3px solid rgba(45, 143, 0, 0.01);
+    }
+
+    main .container #answers .answer:hover {
+        color: var(--primary);
+        background: var(--sec_text);
+        cursor: pointer;
+    }
+
+    main .container #answers .answer.active {
+        color: var(--primary);
+        background: var(--sec_text);
+    }
+
+    main .container #answers .answer.wrong {
+        background: rgba(231, 2, 2, 1);
+        outline: 3px solid rgba(231, 2, 2, 0.5);
+    }
+
+    main .container #answers .answer.right {
+        color: var(--primary);
+        background: rgba(45, 143, 0, 1);
+        outline: 3px solid rgba(45, 143, 0, 0.5);
+    }
+</style>
 </head>
 
-  <body>
-    <header>
-      <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./about.html">About</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </div>
-        </nav>
+<body>
+    <main>
+        <div class="header">
+            <a class="brand" href="">Quiz Web</a>
         </div>
-      
-    </header>
-    
-    <h3 id="welcome-message">Helloo!! Test your brain with this quiz</h3>
-
-    
-
-    <!-- Inserting the link container -->
-    <div id="quiz-container"></div>
-
-    <!-- Start Quiz Button -->
-    <button id="start-quiz-button">START QUIZ</button>
-
-    <!-- Adding Restart Button -->
-    <div>
-      <button id="restart-button">Restart Quiz</button>
-    </div>
-
-    <!-- Adding a timer to quiz -->
-    <div id="timer">Time: <span id="time-remaining">0</span> seconds</div>
-
-    <!-- vanila javascript Link -->
-    <script src="./assets/quiz.js"></script>
-    <!-- Bootstrap Javascript, Jquery and popper.js Link -->
-    
-  
-    <!--Structuring the footer -->
-      <div>
-        <footer class="bg-dark-1">
-          <section id="footer" class="py-5">
-          
-            <div class="container text-center">
-              <a href="#" class="twitter"></a>
-              <a href="#" class="linkedin"></a>
-              <a href="#" class="facebook"></a>
-              <a href="#" class="skype"></a>
-              <a href="#" class="flickr"></a>
-              <!-- <h6 class="m-0 mt-4 text-center text-white text-capitalize">Copyright &copy; 2020 designed by W3schoolweb</h6> -->
+        <div class="container">
+            <h1 id="intro">
+                Click start to start Quiz
+            </h1>
+            <div id="question">
             </div>
-            </section>
-          
-      </div>
+            <div id="answers">
+            </div>
+        </div>
+        <div class="footer">
+            <div class="btn_group">
+                <button id="restart" class="btn">Re-start</button>
+                <button id="start" class="btn full">Start</button>
+            </div>
+            <h6><a class="brand" href="">About </a>Quiz Web</h6>
+        </div>
+    </main>
+    <script src="./js/grapple.js"></script>
+    <script>
+        let score = 0;
+            let qn = 0;
+            const restart = $("#restart");
+            const start = $("#start");
+            const questions = [
+                {
+                    question: "What is the capital of France?",
+                    answers: ["Paris", "Madrid", "Rome"],
+                    correctAnswer: "Paris",
+                },
+                {
+                    question: "What is the largest planet in our solar system?",
+                    answers: ["Jupiter", "Saturn", "Neptune"],
+                    correctAnswer: "Jupiter",
+                },
+                {
+                    question: "What is the smallest country in the world?",
+                    answers: ["Monaco", "Vatican City", "San Marino"],
+                    correctAnswer: "Vatican City",
+                },
+                {
+                    question: "Where is MMDU located in India?",
+                    answers: ["Chandigah", "Delhi", "Mullana"],
+                    correctAnswer: "Mullana",
+                },
+                {
+                    question: "What is the full meaning of BCA as a course in MMDU?",
+                    answers: [
+                        "Bachelor of Computer Applications",
+                        "Bachelor of Cardiac Arrest",
+                        "Bachelor of Computer Science",
+                    ],
+                    correctAnswer: "Bachelor of Computer Applications",
+                },
+                {
+                    question: "Who is the head of the BCA department?",
+                    answers: ["Vivek Bhatnagar", "Gautam Kumar", "Dr Rattan"],
+                    correctAnswer: "Vivek Bhatnagar",
+                },
+            ];
 
-      <!-- styling the footer -->
-      <style>
-        #footer .twitter {
-          background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
-          background-repeat: no-repeat;
-          background-position: 0 0;
-        }
-        #footer .linkedin {
-          background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
-          background-repeat: no-repeat;
-          background-position: -78px 0;
-        }
-        #footer .facebook {
-          background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
-          background-repeat: no-repeat;
-          background-position: -233px 0;
-        }
-        #footer .skype {
-          background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
-          background-repeat: no-repeat;
-          background-position: -156px 0;
-        }
-        #footer .flickr {
-          background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
-          background-repeat: no-repeat;
-          background-position: -310px 0;
-        }
-        #footer a {
-          height: 56px;
-          width: 56px;
-          display: inline-block;
-          margin: 10px;
-          
-        }
-        #footer a:hover {
-          transition: all 0.3s ease-out;
-          -webkit-transition: all 0.3s ease-out;
-        }
-        #footer .twitter:hover {
-          background-position: 0 -56px;
-        }
-        #footer .facebook:hover {
-          background-position: -233px -56px;
-        }
-        #footer .skype:hover {
-          background-position: -156px -56px;
-        }
-        #footer .linkedin:hover {
-          background-position: -78px -56px;
-        }
-        #footer .flickr:hover {
-          background-position: -310px -56px;
-        }
-        .bg-dark-1{
-          background-color: #FF3CAC;
-        background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
-        }
-          </style>
-        
-      </footer>
+            restart.onclick = startQuiz;
+            start.onclick = startQuiz;
 
-    
-  </body>
+            function startQuiz() {
+                score = 0;
+                qn = 0;
+                $("#intro").addClass("hide");
+                show_question();
+            }
+            function show_question() {
+                $("#question").innerText = questions[qn]["question"];
+                $("#answers").innerHTML = "";
+                questions[qn]["answers"].forEach((element) => {
+                    $("#answers").append(
+                        `<div class="answer" onclick="answer(this)">${element}</div>`
+                    );
+                });
+            }
+            function answer(node) {
+                let answer = node.innerText;
+                node.addClass("active");
+                if (answer == questions[qn]["correctAnswer"]) {
+                    score++;
+                    node.addClass("right");
+                } else {
+                    node.addClass("wrong");
+                }
+                qn++;
+                setTimeout(() => {
+                    if (qn == questions.length) {
+                        $("#question").innerText = "";
+                        $("#answers").innerHTML = "";
+                        $("#intro").innerText = score + "/" + qn + "\nCorrect";
+                        $("#intro").removeClass("hide");
+                    } else {
+                        show_question();
+                    }
+                }, 1000);
+            }
+    </script>
+</body>
+
 </html>

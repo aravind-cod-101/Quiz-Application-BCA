@@ -1,34 +1,27 @@
-# Quiz-Application-BCA
+# Quiz-Application
 
 ## Description:
-* This is a school project- It is a quiz web application that  has set of questions with multiple choice questions, and should the right answer is chosen, it tell you the number of questions you got right and the number you got wrong.
+* Don't know why but i am rebuilding this ui for help you brother
 
 ## Installation:
-* This application does not require the traditional way of installation, all that is required is to git clone this repository to your local PC, use any code editor application like VS Code, to launch the application through its live server extension. OR, after git cloning, just use open the index file and the application will launch. But make sure you are connected to the internet while doing this is because the application is deployed to github pages which is live.
+* Just download this repo and start taking quizes
 
-  ## Usage:
-  The application is used pretty much same as the its installation process.
-
-  ## License:
-  Refer to the MIT license within the repository.
-  Use this application ethically or responsibly.
-
-  ## Technologies used:
+## Technologies used:
   * HTML
-  * CSS
+  * [GSS (Grapple Style Sheets)](https://Darkking1098.github.io/GSS)
+  * Grapple.js (DOM manipulation library)
   * JAVASCRIPT
-  * GITHUB PAGES
-  * BOOTSTRAP
-
-## Contributions:
-This project is welcome for any contributions to improve the application.
 
 ## Screenshots:
-* ![image](assets/screenshots/Sample_page.jpg)
-
+* ![image](images/Screenshot%20(64).png)
+* ![image](images/Screenshot%20(65).png)
+* ![image](images/Screenshot%20(66).png)
+* ![image](images/Screenshot%20(67).png)
+* ![image](images/Screenshot%20(68).png)
+* ![image](images/Screenshot%20(69).png)
 
 ## Deployed link
-* https://damiennsoh.github.io/Quiz-Application-BCA/
+* https://Darkking1098.github.io/Quiz-Application-BCA/
 
 ## Developer:
-* Damien N. Ayine|[Damiennsoh](https://github.com/Damiennsoh)|
+* Ajay Kumar|[Darkking](https://github.com/Darkking1098)|
