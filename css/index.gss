@@ -1,0 +1,53 @@
+body ++ .jcc,.aic
+
+main ++ .cflex
+    height:100%
+    width:min(350px,100%)
+    box-shadow:0 0 20px 0 var(--panel_shadow)
+    @p:20px
+    @bg:var(--secondary)
+    @c:var(--prime_text)
+    .header
+        .brand
+            @fs:2rem
+            @fw:600
+    .footer 
+        .btn_group ++ .rflex
+            @m-b:20px
+            @p-x:20px
+            .btn
+                @fg:1
+                @c:var(--prime_text)
+                @br:10px
+                border:2px solid var(--sec_text)
+                transition:all 0.4s
+                &.full
+                    @c:var(--secondary)
+                    @bg:var(--sec_text)
+                    :hover
+                        @c:var(--primary)
+                        @bg:var(--prime_text)
+                :not(:first-child)
+                    @m-l:6px
+                :hover
+                    @c:var(--secondary)
+                    @bg:var(--sec_text)
+        h6
+            text-align:center
+            .brand
+                @fs-1.8rem
+    .container @fg-1 
+        @p:40px 20px
+        #question
+            @p-y:30px
+        #answers
+            .answer @fw-600
+                @p:10px 20px
+                @bg:var(--primary)
+                @m-y:5px
+                @br:7px
+                transition:all 0.4s
+                :hover
+                    @c:var(--primary)
+                    @bg:var(--sec_text)
+                    cursor:pointer
