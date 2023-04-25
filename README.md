@@ -13,12 +13,12 @@
   * JAVASCRIPT
 
 ## Screenshots:
-* ![image](images/Screenshot (64).png)
-* ![image](images/Screenshot (65).png)
-* ![image](images/Screenshot (66).png)
-* ![image](images/Screenshot (67).png)
-* ![image](images/Screenshot (68).png)
-* ![image](images/Screenshot (69).png)
+* ![image](images/Screenshot%20(64).png)
+* ![image](images/Screenshot%20(65).png)
+* ![image](images/Screenshot%20(66).png)
+* ![image](images/Screenshot%20(67).png)
+* ![image](images/Screenshot%20(68).png)
+* ![image](images/Screenshot%20(69).png)
 
 ## Deployed link
 * https://Darkking1098.github.io/Quiz-Application-BCA/
