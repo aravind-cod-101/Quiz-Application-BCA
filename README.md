@@ -8,7 +8,7 @@
 
 ## Technologies used:
   * HTML
-  * GSS (Grapple Style Sheets)
+  * [GSS (Grapple Style Sheets)](https://Darkking1098.github.io/GSS)
   * Grapple.js (DOM manipulation library)
   * JAVASCRIPT
 
